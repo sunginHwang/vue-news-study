@@ -1,8 +1,9 @@
 <template>
    <div>
-      <div v-for="item in askList">
-        {{item.title}}
-      </div>
+      <p  v-for="ask in askList">
+       <router-link :to="`/item/${ask.id}`" >{{ask.title}}</router-link>
+       <small>{{ask.time_ago}} by {{ask.user}}</small>
+    </p>
    </div>
 </template>
 
@@ -16,6 +17,7 @@ export default {
         })
     },
     created(){
+
          this.$store.dispatch('FETCH_ASK');
     }
 }
