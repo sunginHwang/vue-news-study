@@ -17,15 +17,18 @@ export const router = new VueRouter({
         redirect: '/news'
     },
     {
-      path: "/news", 
+      path: '/news', 
+      name: 'news',
       component: NewsView
     },
     {
-      path: "/ask",
+      path: '/ask',
+      name: 'ask',
       component: AskView
     },
     {
-      path: "/jobs",
+      path: '/jobs',
+      name: 'jobs',
       component: JobsView
     },
     {
