@@ -4,11 +4,10 @@
                     <i class="fas fa-user"></i>
                 </div>
                 <div class="user-description">
-                    <router-link :to="`/user/${fetchedItem.user}`">
-                        {{fetchedItem.user}}
-                    </router-link>
+                    <slot name="userName"></slot>
                     <div class="time">
-                      {{fetchedItem.time_ago}}
+                        <slot name="time"></slot>
+                        <slot name="karma"></slot>
                     </div>
                 </div>
             </div>
@@ -16,7 +15,6 @@
 
 <script>
 export default {
-
 }
 </script>
 
