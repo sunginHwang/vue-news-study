@@ -39,21 +39,9 @@ import { mapGetters } from 'vuex';
 export default {
     computed:{
        listItems(){
-           const routeName = this.$route.name;
-           if(routeName === 'news'){
-             return this.$store.state.news;     
-           }else if(routeName === 'ask'){
-             return this.$store.state.ask;
-           }else{
-            return this.$store.state.jobs;  
-           }
+          return this.$store.state.list 
        }
     },
-    created(){
-        const routeName = this.$route.name;
-        const dispatchName = routeName === 'news' ? 'FETCH_NEWS' : routeName === 'jobs' ? 'FETCH_JOBS' : 'FETCH_ASK';
-        this.$store.dispatch(dispatchName);
-    }
 }
 </script>
 
