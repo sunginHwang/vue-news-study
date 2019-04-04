@@ -3,17 +3,31 @@ import axios from 'axios';
 const config = {
     baseUrl: 'https://api.hnpwa.com/v0',
 }
+const emptyResDataList = { data: [] };
+const emptyResData = { data: {} };
 
-function fetchList(pageType) {
-    return axios.get(`${config.baseUrl}/${pageType}/1.json`);
+async function fetchList(pageType) {
+    try{
+        return await axios.get(`${config.baseUrl}/${pageType}/1.json`);
+    }catch(exception){
+        return await emptyResDataList;
+    }
 }
 
-function fetchUserInfo(userName) {
-    return axios.get(`${config.baseUrl}/user/${userName}.json`);
+async function fetchUserInfo(userName) {
+    try {
+        return await axios.get(`${config.baseUrl}/user/${userName}.json`);
+    } catch (error) {
+        return await emptyResData;
+    }
 }
 
-function fetchItemInfo(itemId) {
-    return axios.get(`${config.baseUrl}/item/${itemId}.json`);
+async function fetchItemInfo(itemId) {
+    try {
+        return await axios.get(`${config.baseUrl}/item/${itemId}.json`);
+    } catch (error) {
+        return await emptyResData;
+    }
 }
 
 export {
