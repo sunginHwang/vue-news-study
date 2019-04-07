@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 
 import UserView from "../views/UserView.vue";
 import ItemView from "../views/ItemView.vue";
+import ChartView from "../views/ChartView.vue";
 import CreateListView from '../views/CreateListView';
 import bus from "../utils/bus";
 import {store} from '../store';
@@ -16,10 +17,15 @@ export const router = new VueRouter({
              redirect: "/news"
            },
            {
+             path: "/chart",
+             name: "chart",
+             component: ChartView
+           },
+           {
              path: "/news",
              name: "news",
              component: CreateListView("NewsView"),
-             beforeEnter: ( to, from, next) => {
+             beforeEnter: (to, from, next) => {
                beforeEnterFetchList(to.name, next);
              }
            },
@@ -29,12 +35,12 @@ export const router = new VueRouter({
              component: CreateListView("AskView"),
              beforeEnter: (to, from, next) => {
                beforeEnterFetchList(to.name, next);
-            }
+             }
            },
            {
              path: "/jobs",
              name: "jobs",
-             component: CreateListView('JobsView'),
+             component: CreateListView("JobsView"),
              beforeEnter: (to, from, next) => {
                beforeEnterFetchList(to.name, next);
              }
