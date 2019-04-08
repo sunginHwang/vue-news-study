@@ -4,6 +4,8 @@ import VueRouter from "vue-router";
 import UserView from "../views/UserView.vue";
 import ItemView from "../views/ItemView.vue";
 import ChartView from "../views/ChartView.vue";
+import CommonView from "../views/CommonView.vue";
+import SlotView from "../views/SlotView.vue";
 import CreateListView from '../views/CreateListView';
 import bus from "../utils/bus";
 import {store} from '../store';
@@ -52,6 +54,14 @@ export const router = new VueRouter({
            {
              path: "/item/:id",
              component: ItemView
+           },
+           {
+             path: "/common",
+             component: CommonView
+           },
+           {
+             path: "/slot",
+             component: SlotView
            }
          ]
        });
