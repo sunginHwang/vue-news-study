@@ -5,6 +5,8 @@ import UserView from "../views/UserView.vue";
 import ItemView from "../views/ItemView.vue";
 import ChartView from "../views/ChartView.vue";
 import CommonView from "../views/CommonView.vue";
+import RenderlessView from "../views/RenderlessView.vue";
+import ControlledView from "../views/ControlledView.vue";
 import SlotView from "../views/SlotView.vue";
 import CreateListView from '../views/CreateListView';
 import bus from "../utils/bus";
@@ -62,6 +64,14 @@ export const router = new VueRouter({
            {
              path: "/slot",
              component: SlotView
+           },
+           {
+             path: "/controlled",
+             component: ControlledView
+           },
+           {
+             path: "/renderless",
+             component: RenderlessView
            }
          ]
        });
