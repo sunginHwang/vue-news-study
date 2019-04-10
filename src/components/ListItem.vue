@@ -34,12 +34,11 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
 
 export default {
     computed:{
        listItems(){
-          return this.$store.state.list 
+          return this.$store.state.list.list
        }
     },
 }

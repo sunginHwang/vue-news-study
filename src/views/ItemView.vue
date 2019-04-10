@@ -29,11 +29,13 @@ export default {
         UserProfile
     },
     computed:{
-        ...mapGetters([ 'fetchedItem' ])
+        ...mapGetters('item',{
+            fetchedItem: 'fetchedItem'
+        })
     },
     created(){
         const itemId = this.$route.params.id;
-        this.$store.dispatch('FETCH_ITEM',itemId);
+        this.$store.dispatch('item/FETCH_ITEM',itemId);
     }
 }
 </script>

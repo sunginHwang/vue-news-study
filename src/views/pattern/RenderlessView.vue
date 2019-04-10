@@ -6,7 +6,7 @@
                is loading....
             </div>
             <div v-if="!loading">
-               {{response}}
+            <p>{{response.name}}</p>
             </div>
          </div>
         </FetchData>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import FetchData from '../components/renderless/FetchData';
+import FetchData from '../../components/renderless/FetchData';
 export default {
     components:{
         FetchData,

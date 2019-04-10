@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import CheckBox from '../components/controlled/CheckBox';
+import CheckBox from '../../components/controlled/CheckBox';
 export default {
     components:{
         CheckBox,

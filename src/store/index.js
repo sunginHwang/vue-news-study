@@ -1,24 +1,15 @@
 import Vue from 'vue';
 import Vuex from "vuex";
-import mutations from './mutations';
-import actions from './actions';
+import item from './modules/item';
+import user from './modules/user';
+import list from './modules/list';
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
-         state: {
-           user: {},
-           item: {},
-           list: [], 
-          },
-         getters: {
-           fetchedUser(state) {
-             return state.user;
-           },
-           fetchedItem(state) {
-             return state.item;
-           }
-         },
-         actions,
-         mutations
-       });
+    modules: {
+        item,
+        user,
+        list
+    }
+});

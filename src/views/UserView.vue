@@ -15,11 +15,13 @@ export default {
         UserProfile,
     },
     computed:{
-    ...mapGetters(['fetchedUser'])
+    ...mapGetters('user',{
+        fetchedUser: 'fetchedUser'
+    })
     },
     created(){
         const userName = this.$route.params.id;
-        this.$store.dispatch('FETCH_USER',userName);
+        this.$store.dispatch('user/FETCH_USER',userName);
     }
 }
 </script>
