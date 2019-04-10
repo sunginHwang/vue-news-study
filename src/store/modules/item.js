@@ -1,4 +1,4 @@
-import { fetchItemInfo } from "../../api";
+import { fetchItemInfo } from "../../api/ItemAPI";
 // state
 const state =  {
     item: {},

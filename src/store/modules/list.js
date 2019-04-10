@@ -1,4 +1,4 @@
-import { fetchList } from "../../api";
+import { fetchList } from "../../api/listAPI";
 // state
 const state =  {
     list: [],

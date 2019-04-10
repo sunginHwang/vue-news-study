@@ -1,4 +1,4 @@
-import { fetchUserInfo } from "../../api";
+import { fetchUserInfo } from "../../api/userAPI";
 // state
 const state =  {
     user: {},
