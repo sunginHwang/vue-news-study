@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-jest": "^24.6.0",
     "chart.js": "^2.8.0",
     "core-js": "^3.0.1",
     "vue": "^2.6.6",
@@ -20,8 +22,10 @@
     "@vue/cli-plugin-babel": "^3.5.0",
     "@vue/cli-plugin-eslint": "^3.5.0",
     "@vue/cli-service": "^3.5.0",
+    "@vue/eslint-config-standard": "^4.0.0",
     "@vue/test-utils": "^1.0.0-beta.29",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.7.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "jest": "^24.7.1",
@@ -31,15 +35,23 @@
   "eslintConfig": {
     "root": true,
     "env": {
-      "node": true
+      "node": true,
+      "jest": true
     },
     "extends": [
       "plugin:vue/essential",
-      "eslint:recommended"
+      "eslint:recommended",
+      "@vue/standard"
     ],
     "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
+    },
+    "jest": {
+      "transform": {
+        "^.+\\.js$": "babel-jest",
+        "^.+\\.vue": "vue-jest"
+      }
     }
   },
   "postcss": {
