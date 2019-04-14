@@ -1,13 +1,7 @@
 import Vue from 'vue';
 import VueRouter from "vue-router";
 
-import UserView from "../views/UserView.vue";
-import ItemView from "../views/ItemView.vue";
-import ChartView from "../views/ChartView.vue";
-import CommonView from "../views/CommonView.vue";
 import RenderlessView from "../views/pattern/RenderlessView.vue";
-import ControlledView from "../views/pattern/ControlledView.vue";
-import SlotView from "../views/pattern/SlotView.vue";
 import CreateListView from '../views/CreateListView';
 import bus from "../utils/bus";
 import {store} from '../store';
@@ -23,7 +17,7 @@ export const router = new VueRouter({
            {
              path: "/chart",
              name: "chart",
-             component: ChartView
+             component: () => import('../views/ChartView.vue')
            },
            {
              path: "/news",
@@ -51,23 +45,23 @@ export const router = new VueRouter({
            },
            {
              path: "/user/:id",
-             component: UserView
+             component: () => import('../views/UserView.vue')
            },
            {
              path: "/item/:id",
-             component: ItemView
+             component:  () => import('../views/ItemView.vue')
            },
            {
              path: "/common",
-             component: CommonView
+             component: () => import('../views/CommonView.vue')
            },
            {
              path: "/slot",
-             component: SlotView
+             component: () => import('../views/pattern/SlotView.vue')
            },
            {
              path: "/controlled",
-             component: ControlledView
+             component: () => import('../views/pattern/ControlledView.vue')
            },
            {
              path: "/renderless",
@@ -86,5 +80,5 @@ const beforeEnterFetchList = async (listName,next) => {
   }catch(e){
     next();
   }
-  
+
 }

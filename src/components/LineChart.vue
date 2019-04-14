@@ -9,12 +9,12 @@
 export default {
      props: {
         chartData: {
-        type: Object,
+        type: Array,
         required: true,
         },
     },
     mounted(){
-        console.log(this.chartData);
+
             const lineChart = new this.$_Chart(this.$refs.lineChart, {
                 type: 'line',
                 data: {
