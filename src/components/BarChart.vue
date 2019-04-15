@@ -6,32 +6,32 @@
 
 <script>
 
-export default {
-props: {
-    chartData: {
-    type: Array,
-    required: true,
-    },
-},
-mounted(){
-        const barChart = new this.$_Chart(this.$refs.barChart, {
-            type: 'bar',
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: this.chartData
+    export default {
+        props: {
+            chartData: {
+                type: Array,
+                required: true,
             },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
+        },
+        mounted() {
+            new this.$_Chart(this.$refs.barChart, {
+                type: 'bar',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: this.chartData
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
                 }
-            }
-        });
+            });
+        }
     }
-}
 </script>
 
 <style>

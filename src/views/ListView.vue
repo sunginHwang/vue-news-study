@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ListItem from '../components/ListItem.vue';
+import ListItem from '@/components/ListItem.vue';
 
 export default {
     components:{
@@ -15,5 +15,5 @@ export default {
 </script>
 
 <style scoped>
-    
+
 </style>

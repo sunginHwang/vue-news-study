@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import BarChart from '../components/BarChart';
-import LineChart from '../components/LineChart';
+import BarChart from '@/components/BarChart';
+import LineChart from '@/components/LineChart';
 
 export default {
     components:{

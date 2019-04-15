@@ -16,12 +16,12 @@
         <section>
              <p v-html='fetchedItem.content'/>
         </section>
-       
+
     </div>
 </template>
 
 <script>
-import UserProfile from '../components/UserProfile';
+import UserProfile from '@/components/UserProfile';
 import { mapGetters } from 'vuex';
 
 export default {

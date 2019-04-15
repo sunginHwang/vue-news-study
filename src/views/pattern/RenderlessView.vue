@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import FetchData from '../../components/renderless/FetchData';
+import FetchData from '@/components/renderless/FetchData';
 export default {
     components:{
         FetchData,

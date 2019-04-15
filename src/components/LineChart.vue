@@ -6,16 +6,15 @@
 
 <script>
 
-export default {
-     props: {
-        chartData: {
-        type: Array,
-        required: true,
+    export default {
+        props: {
+            chartData: {
+                type: Array,
+                required: true,
+            },
         },
-    },
-    mounted(){
-
-            const lineChart = new this.$_Chart(this.$refs.lineChart, {
+        mounted() {
+            new this.$_Chart(this.$refs.lineChart, {
                 type: 'line',
                 data: {
                     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -31,8 +30,8 @@ export default {
                     }
                 }
             });
-    },
-}
+        },
+    }
 </script>
 
 <style>

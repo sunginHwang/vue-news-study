@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import AppHeader from '../components/common/AppHeader';
-import AppContent from '../components/common/AppContent';
+import AppHeader from '@/components/common/AppHeader';
+import AppContent from '@/components/common/AppContent';
 
 export default {
   components:{
