@@ -1,35 +1,27 @@
 import { fetchItemInfo } from "../../api/ItemAPI";
 // state
-const state =  {
+export const state =  {
     item: {},
 };
 
 // mutations
-const mutations = {
+export const mutations = {
     SET_ITEM(state, data) {
         state.item = data;
     }
 };
 
 //getters
-const getters = {
+export const getters = {
     fetchedItem(state) {
         return state.item;
     },
 }
 //actions
-const actions = {
+export const actions = {
     async FETCH_ITEM({ commit }, itemId) {
         const res = await fetchItemInfo(itemId);
         commit("SET_ITEM", res.data);
         return res;
     },
 };
-
-export default {
-    namespaced: true,
-    state,
-    getters,
-    mutations,
-    actions
-}
