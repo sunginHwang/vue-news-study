@@ -13,21 +13,21 @@
                             </a>
                        </template>
                        <template v-else>
-                           <router-link :to="`item/${item.id}`"> 
+                           <router-link :to="`item/${item.id}`">
                                {{item.title}}
                            </router-link>
                        </template>
-                        
+
                    </p>
                    <small class="link-text">
-                       {{item.time_ago}} by 
+                       {{item.time_ago}} by
                        <router-link
                             v-if="item.user"
                             :to="`/user/${item.user}`" class="link-text">{{item.user}}</router-link>
                         <a :href="item.url" v-else>{{item.domain}}</a>
                    </small>
                </div>
-               
+
            </li>
        </ul>
    </div>
@@ -44,7 +44,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss" >
+
+    @import "../style/common.scss";
+
     .list{
         margin:0;
         padding:0;
@@ -61,7 +64,7 @@ export default {
         display:flex;
         align-items:center;
         justify-content:center;
-        color:#41b883;
+        color:$pointColor;
     }
     .title{
         margin:0;
