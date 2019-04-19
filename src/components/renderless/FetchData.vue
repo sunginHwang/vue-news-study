@@ -15,7 +15,10 @@ export default {
                 this.response = res.data;
                 this.loading = false;
             })
-            .catch(e=>console.log(e));
+            .catch(e=>{
+                console.log(e);
+                this.loading = false;
+            });
     },
     render(){
         return this.$scopedSlots.default({
