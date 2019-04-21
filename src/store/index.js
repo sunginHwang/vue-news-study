@@ -4,6 +4,9 @@ import modules from './modules';
 
 Vue.use(Vuex);
 
-export const store = new Vuex.Store({
-    modules
-});
+export function createStore () {
+    return new Vuex.Store({
+        modules
+    });
+}
+
