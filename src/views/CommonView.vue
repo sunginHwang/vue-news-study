@@ -3,17 +3,21 @@
         <h1>chart.js</h1>
         <AppHeader :title="appTitle"></AppHeader>
         <AppContent :items="items" @renew="renewItems"></AppContent>
+        <h1>scoped css</h1>
+        <ScopeCssContent></ScopeCssContent>
     </div>
 </template>
 
 <script>
 import AppHeader from '@/components/common/AppHeader';
 import AppContent from '@/components/common/AppContent';
+import ScopeCssContent from '@/components/common/ScopeCssContent';
 
 export default {
   components:{
       AppHeader,
-      AppContent
+      AppContent,
+      ScopeCssContent
   },
   data(){
       return{
