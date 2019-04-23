@@ -5,6 +5,8 @@
         <AppContent :items="items" @renew="renewItems"></AppContent>
         <h1>scoped css</h1>
         <ScopeCssContent></ScopeCssContent>
+        <h1>event testing</h1>
+        <EventTesting></EventTesting>
     </div>
 </template>
 
@@ -12,12 +14,14 @@
 import AppHeader from '@/components/common/AppHeader';
 import AppContent from '@/components/common/AppContent';
 import ScopeCssContent from '@/components/common/ScopeCssContent';
+import EventTesting from '@/components/common/EventTesting';
 
 export default {
   components:{
       AppHeader,
       AppContent,
-      ScopeCssContent
+      ScopeCssContent,
+      EventTesting
   },
   data(){
       return{
