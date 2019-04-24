@@ -16,7 +16,8 @@ export const getters = {
     fetchedItem(state) {
         return state.item;
     },
-}
+};
+
 //actions
 export const actions = {
     async FETCH_ITEM({ commit }, itemId) {

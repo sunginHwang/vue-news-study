@@ -3,7 +3,12 @@ import App from './App.vue'
 import { router } from './routes';
 import ChartPlugin from "./plugins/ChartPlugin";
 import { store } from './store';
-Vue.config.productionTip = false
+
+Vue.config.productionTip = false;
+
+Vue.config.keyCodes = {
+  slash: 44,
+}
 
 Vue.use(ChartPlugin);
 

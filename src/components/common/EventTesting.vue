@@ -14,6 +14,14 @@
             </template>
         </div>
         <div class="event-test-area">
+            <h2>custom key setting test</h2>
+            <input type="text" @keyup.86="pushBackSpaceKey"/>
+        </div>
+        <div class="event-test-area">
+            <h2>combination key testing</h2>
+            <button type="text" @click.shift="pushCombinationKey">pushCombinationKey</button>
+        </div>
+        <div class="event-test-area">
             <h2>event detect test</h2>
             <div class="detect-parent-area" @click="detectParent">
                 <h3>parent detect</h3>
@@ -28,7 +36,6 @@
                         <a href="https://www.naver.com" @click.prevent="detectChild">not use preventDefault</a>
                         <br/>
                         <a href="https://www.naver.com" @click.prevent.stop="detectChild">not use preventDefault and stop Prod</a>
-
                     </div>
                 </div>
             </div>
@@ -48,6 +55,12 @@
             toggleIfKeyType() {
                 this.ifKeyType = !this.ifKeyType;
             },
+            pushBackSpaceKey() {
+                console.log('pushBackSpaceKey');
+            },
+            pushCombinationKey() {
+                console.log('pushCombinationKey');
+            },
             detectParent(){
                 console.log('detectParent');
             },
@@ -62,7 +75,6 @@
     .event-area{
         margin-top: 3rem;
     }
-
     .event-test-area{
         margin: 10%;
         background-color: #e8e8e8;
