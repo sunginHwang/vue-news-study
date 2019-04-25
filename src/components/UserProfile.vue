@@ -1,5 +1,5 @@
 <template>
-     <div class="user-contaienr">
+     <div class="user-container">
                 <div>
                     <i class="fas fa-user"></i>
                 </div>
@@ -20,7 +20,7 @@ export default {
 
 <style scoped>
 
-.user-contaienr{
+.user-container{
     display:flex;
     align-items:center;
     padding:0.5rem

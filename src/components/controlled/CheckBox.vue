@@ -4,11 +4,16 @@
 
 <script>
 export default {
-    props:['value'],
-    methods: {
-        toggleCheck(){
-            this.$emit('input',!this.value);
+    props:{
+        value:{
+            type: Boolean,
+            required: true
         }
+    },
+    methods: {
+        toggleCheck() {
+            this.$emit('input',!this.value);
+        },
     }
 }
 </script>

@@ -2,7 +2,12 @@
 import axios from 'axios';
 
 export default {
-    props:['url'],
+    props: {
+        url: {
+            type: String,
+            required: true
+        },
+    },
     data(){
         return{
             response: null,

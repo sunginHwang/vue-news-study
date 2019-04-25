@@ -1,12 +1,12 @@
 <template>
     <div>
         <h1>chart.js</h1>
-        <AppHeader :title="appTitle"></AppHeader>
-        <AppContent :items="items" @renew="renewItems"></AppContent>
+        <app-header :title="appTitle"></app-header>
+        <app-content :items="items" @renew="renewItems"></app-content>
         <h1>scoped css</h1>
-        <ScopeCssContent></ScopeCssContent>
+        <scope-css-content></scope-css-content>
         <h1>event testing</h1>
-        <EventTesting></EventTesting>
+        <event-testing></event-testing>
     </div>
 </template>
 

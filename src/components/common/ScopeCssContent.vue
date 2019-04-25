@@ -1,7 +1,7 @@
 <template>
     <div class="content">
-        <ScopeCssContentItem></ScopeCssContentItem>
-        <ScopeCssContentItem2></ScopeCssContentItem2>
+        <scope-css-content-item></scope-css-content-item>
+        <scope-css-content-item2></scope-css-content-item2>
     </div>
 </template>
 
@@ -24,9 +24,6 @@ import ScopeCssContentItem2 from '@/components/common/ScopeCssContentItem2';
         margin: 2rem;
         background-color: #828282;
         border-radius: 8px;
-    }
-    .test{
-        color: bisque;
     }
 
 </style>
