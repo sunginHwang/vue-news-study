@@ -2,15 +2,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import { router } from './routes';
 import ChartPlugin from "./plugins/ChartPlugin";
+import KeyCodePlugin from "./plugins/KeyCodePlugin";
+
 import { store } from './store';
 
 Vue.config.productionTip = false;
 
-Vue.config.keyCodes = {
-  slash: 44,
-}
-
 Vue.use(ChartPlugin);
+Vue.use(KeyCodePlugin);
 
 new Vue({
   render: h => h(App),

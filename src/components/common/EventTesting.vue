@@ -15,7 +15,7 @@
         </div>
         <div class="event-test-area">
             <h2>custom key setting test</h2>
-            <input type="text" @keyup.86="pushBackSpaceKey"/>
+            <input type="text" @keyup.slash="pushBackSpaceKey"/>
         </div>
         <div class="event-test-area">
             <h2>combination key testing</h2>
@@ -55,7 +55,8 @@
             toggleIfKeyType() {
                 this.ifKeyType = !this.ifKeyType;
             },
-            pushBackSpaceKey() {
+            pushBackSpaceKey(e) {
+                console.log(e.keyCode);
                 console.log('pushBackSpaceKey');
             },
             pushCombinationKey() {
