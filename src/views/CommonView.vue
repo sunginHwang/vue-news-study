@@ -5,6 +5,11 @@
         <app-content :items="items" @renew="renewItems"></app-content>
         <h1>scoped css</h1>
         <scope-css-content></scope-css-content>
+        <h1>Promise alert 테스트</h1>
+        <div>
+            <button @click="onAlertClick">Alert 버튼</button>
+            <button @click="onConfirmClick">Confirm 버튼</button>
+        </div>
         <h1>event testing</h1>
         <event-testing></event-testing>
     </div>
@@ -15,6 +20,7 @@ import AppHeader from '@/components/common/AppHeader';
 import AppContent from '@/components/common/AppContent';
 import ScopeCssContent from '@/components/common/ScopeCssContent';
 import EventTesting from '@/components/common/EventTesting';
+import { alert, confirm } from '@/utils/dialog';
 
 export default {
   components:{
@@ -33,6 +39,15 @@ export default {
       renewItems(){
           this.items = [40,50,60]
       },
+      onAlertClick(){
+          alert('확인을 눌러주세요').then((e)=>console.log(e));
+      },
+      onConfirmClick(){
+          confirm('확인을 눌러주세요').then((isConfirm)=>{
+              isConfirm ? console.log('확인')
+                        : console.log('취소');
+          });
+      }
   },
 }
 </script>
