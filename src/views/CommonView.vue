@@ -1,5 +1,7 @@
 <template>
     <div>
+        <h1>inHeritTest</h1>
+        <base-input :label="inputValue" placeHolder="inputValue" v-model="inputValue" @keyup.enter="console.log(inputValue)"/>
         <h1>chart.js</h1>
         <app-header :title="appTitle"></app-header>
         <app-content :items="items" @renew="renewItems"></app-content>
@@ -12,6 +14,7 @@
         </div>
         <h1>event testing</h1>
         <event-testing></event-testing>
+
     </div>
 </template>
 
@@ -19,6 +22,7 @@
 import AppHeader from '@/components/common/AppHeader';
 import AppContent from '@/components/common/AppContent';
 import ScopeCssContent from '@/components/common/ScopeCssContent';
+import BaseInput from '@/components/common/BaseInput';
 import EventTesting from '@/components/common/EventTesting';
 import { alert, confirm } from '@/utils/dialog';
 
@@ -27,12 +31,14 @@ export default {
       AppHeader,
       AppContent,
       ScopeCssContent,
-      EventTesting
+      EventTesting,
+      BaseInput
   },
   data(){
       return{
           appTitle: 'common App Title',
-          items: [10,20,30]
+          items: [10,20,30],
+          inputValue:"test"
       }
   },
   methods: {

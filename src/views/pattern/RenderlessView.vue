@@ -1,6 +1,6 @@
 <template>
     <div>
-        <FetchData url = "https://jsonplaceholder.typicode.com/users/1">
+        <fetch-data url = "https://jsonplaceholder.typicode.com/users/1">
          <div slot-scope="{loading, response}">
             <div v-if="loading">
                is loading....
@@ -9,7 +9,7 @@
             <p>{{response.name}}</p>
             </div>
          </div>
-        </FetchData>
+        </fetch-data>
     </div>
 </template>
 
