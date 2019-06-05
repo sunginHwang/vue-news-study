@@ -9,6 +9,8 @@
         <p>{{ filterTest.dateFilter | date}}</p>
         <p>{{ filterTest.currencyFilter | currency}}</p>
         <p>{{ filterTest.percentFilter,'#' | percent}}</p>
+        <h1>vuex form change</h1>
+        <input type="text" v-model="this.$store.state.form.form.id">
         <h1>chart.js</h1>
         <app-header :title="appTitle"></app-header>
         <app-content :items="items" @renew="renewItems"></app-content>
