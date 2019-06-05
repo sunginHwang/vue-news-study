@@ -5,6 +5,10 @@
                     placeHolder="`placeHolderSample`"
                     @click="test"
                     v-model="value"/>
+        <h1>filter Test12</h1>
+        <p>{{ filterTest.dateFilter | date}}</p>
+        <p>{{ filterTest.currencyFilter | currency}}</p>
+        <p>{{ filterTest.percentFilter,'#' | percent}}</p>
         <h1>chart.js</h1>
         <app-header :title="appTitle"></app-header>
         <app-content :items="items" @renew="renewItems"></app-content>
@@ -41,12 +45,17 @@
             return {
                 appTitle: 'common App Title',
                 items: [10, 20, 30],
-                value: ""
+                value: "",
+                filterTest: {
+                    dateFilter: "2019-12-31 00:00:00",
+                    currencyFilter: 121333,
+                    percentFilter: 12.33
+                }
             }
         },
         methods: {
-            test(){
-              console.log('root');
+            test() {
+                console.log('root');
             },
             renewItems() {
                 this.items = [40, 50, 60]
