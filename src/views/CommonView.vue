@@ -10,7 +10,7 @@
         <p>{{ filterTest.currencyFilter | currency}}</p>
         <p>{{ filterTest.percentFilter,'#' | percent}}</p>
         <h1>vuex form change</h1>
-        <input type="text" v-model="this.$store.state.form.form.id">
+        <input type="text" v-model="formId">
         <h1>chart.js</h1>
         <app-header :title="appTitle"></app-header>
         <app-content :items="items" @renew="renewItems"></app-content>
@@ -52,6 +52,16 @@
                     dateFilter: "2019-12-31 00:00:00",
                     currencyFilter: 121333,
                     percentFilter: 12.33
+                }
+            }
+        },
+        computed: {
+            formId: {
+                get() {
+                    return this.$store.state.form.form.id;
+                },
+                set(value) {
+                    this.$store.dispatch("form/setForm", {type: 'texr', value});
                 }
             }
         },

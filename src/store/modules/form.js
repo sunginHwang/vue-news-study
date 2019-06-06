@@ -8,8 +8,8 @@ export const state =  {
 
 // mutations
 export const mutations = {
-    SET_FROM(state, data) {
-        state.form = data;
+    SET_FORM(state, {type, value}) {
+        state.form[type] = value;
     }
 };
 
@@ -18,5 +18,8 @@ export const getters = {}
 
 //actions
 export const actions = {
-
+    setForm({commit}, {type, value}) {
+        console.log(type, value);
+        commit("SET_FORM",{type, value});
+    }
 };
