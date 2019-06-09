@@ -53,16 +53,6 @@
                 console.timeEnd("calculatingTime");
 
             },
-            async processArray(array) {
-              //  array.forEach(async (item) => await this.delayedLog(item));
-
-                // map array to promises
-                const promises = array.map(this.delayedLog);
-                // wait until all promises are resolved
-                await Promise.all(promises);
-
-                console.log('Done!');
-            }
         },
     }
 </script>
