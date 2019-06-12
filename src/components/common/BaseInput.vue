@@ -3,8 +3,7 @@
         {{label}}
         <input
                 v-bind="$attrs"
-                v-on="listeners"
-        />
+                v-on="listeners"/>
     </label>
 </template>
 
@@ -23,7 +22,6 @@
         },
         computed: {
             listeners() {
-                console.log(12);
                 return {
                     ...this.$listeners,
                     input: event => this.$emit('input', event.target.value)

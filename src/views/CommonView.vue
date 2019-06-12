@@ -3,8 +3,11 @@
         <h1>inheritAttrsTest</h1>
         <base-input :label="`fefefe`"
                     placeHolder="`placeHolderSample`"
-                    @click="test"
-                    v-model="value"/>
+                    @focus="evnetListenerDetect('focus')"
+                    @click="evnetListenerDetect('click')"
+                    @focusin="evnetListenerDetect('focusIn')"
+                    @focusout="evnetListenerDetect('focusOut')"
+                    v-model="formId"/>
         <h1>filter Test12</h1>
         <p>{{ filterTest.dateFilter | date}}</p>
         <p>{{ filterTest.currencyFilter | currency}}</p>
@@ -66,8 +69,8 @@
             }
         },
         methods: {
-            test() {
-                console.log('root');
+            evnetListenerDetect(type) {
+                console.log(`event : ${type} detect`);
             },
             renewItems() {
                 this.items = [40, 50, 60]
