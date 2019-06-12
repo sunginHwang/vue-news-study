@@ -1,12 +1,13 @@
-import { fetchItemInfo } from "../../api/ItemAPI";
+import {ITEM} from '../mutation-types';
+import {fetchItemInfo} from "../../api/ItemAPI";
 // state
-export const state =  {
+export const state = {
     item: {},
 };
 
 // mutations
 export const mutations = {
-    SET_ITEM(state, data) {
+    [ITEM.SET_ITEM](state, data) {
         state.item = data;
     }
 };
@@ -20,9 +21,9 @@ export const getters = {
 
 //actions
 export const actions = {
-    async FETCH_ITEM({ commit }, itemId) {
+    async FETCH_ITEM({commit}, itemId) {
         const res = await fetchItemInfo(itemId);
-        commit("SET_ITEM", res.data);
+        commit(ITEM.SET_ITEM, res.data);
         return res;
     },
 };

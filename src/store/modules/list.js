@@ -1,3 +1,4 @@
+import {LIST} from '../mutation-types';
 import { fetchList } from "../../api/listAPI";
 // state
 export const state =  {
@@ -6,7 +7,7 @@ export const state =  {
 
 // mutations
 export const mutations = {
-    SET_LIST(state, data) {
+    [LIST.SET_LIST](state, data) {
         state.list = data;
     }
 };
@@ -18,7 +19,7 @@ export const getters = {}
 export const actions = {
     async FETCH_LIST({commit}, pageName){
         const res = await fetchList(pageName);
-        commit("SET_LIST", res.data);
+        commit(LIST.SET_LIST, res.data);
         return res;
     },
 };

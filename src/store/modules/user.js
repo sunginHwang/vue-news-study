@@ -1,4 +1,5 @@
-import { fetchUserInfo } from "../../api/userAPI";
+import {USER} from '../mutation-types';
+
 // state
 export const state =  {
     user: {},
@@ -6,7 +7,7 @@ export const state =  {
 
 // mutations
 export const mutations = {
-    SET_USER(state, data) {
+    [USER.SET_USER](state, data) {
         state.user = data;
     },
 };
@@ -21,7 +22,7 @@ export const getters = {
 export const actions = {
     async FETCH_USER({ commit }, userName){
         const res = await fetchUserInfo(userName);
-        commit("SET_USER", res.data);
+        commit(USER.SET_USER, res.data);
         return res;
     },
 };

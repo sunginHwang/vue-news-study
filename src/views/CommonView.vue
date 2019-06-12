@@ -12,8 +12,13 @@
         <p>{{ filterTest.dateFilter | date}}</p>
         <p>{{ filterTest.currencyFilter | currency}}</p>
         <p>{{ filterTest.percentFilter,'#' | percent}}</p>
+
         <h1>vuex form change</h1>
         <input type="text" v-model="formId">
+        <input type="text" v-model="formName">
+        <h1>vuex Async await parallel</h1>
+        <async-await-parallel/>
+
         <h1>chart.js</h1>
         <app-header :title="appTitle"></app-header>
         <app-content :items="items" @renew="renewItems"></app-content>
@@ -36,6 +41,7 @@
     import ScopeCssContent from '@/components/common/ScopeCssContent';
     import BaseInput from '@/components/common/BaseInput';
     import EventTesting from '@/components/common/EventTesting';
+    import AsyncAwaitParallel from '@/components/AsyncAwaitParallel';
     import {alert, confirm} from '@/utils/dialog';
 
     export default {
@@ -44,6 +50,7 @@
             AppContent,
             ScopeCssContent,
             EventTesting,
+            AsyncAwaitParallel,
             BaseInput
         },
         data() {
@@ -64,9 +71,17 @@
                     return this.$store.state.form.form.id;
                 },
                 set(value) {
-                    this.$store.dispatch("form/setForm", {type: 'texr', value});
+                    this.$store.dispatch("form/setForm", {type:'id',value});
                 }
-            }
+            },
+            formName: {
+                get() {
+                    return this.$store.state.form.form.name;
+                },
+                set(value) {
+                    this.$store.dispatch("form/setForm", {type:'name',value});
+                }
+            },
         },
         methods: {
             evnetListenerDetect(type) {

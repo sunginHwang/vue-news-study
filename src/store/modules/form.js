@@ -1,5 +1,6 @@
+import {FORM} from '../mutation-types';
 // state
-export const state =  {
+export const state = {
     form: {
         id: 'id',
         name: ''
@@ -8,7 +9,7 @@ export const state =  {
 
 // mutations
 export const mutations = {
-    SET_FORM(state, {type, value}) {
+    [FORM.SET_FORM](state, {type, value}) {
         state.form[type] = value;
     }
 };
@@ -20,6 +21,6 @@ export const getters = {}
 export const actions = {
     setForm({commit}, {type, value}) {
         console.log(type, value);
-        commit("SET_FORM",{type, value});
+        commit(FORM.SET_FORM, {type, value});
     }
 };
