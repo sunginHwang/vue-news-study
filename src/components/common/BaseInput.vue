@@ -1,10 +1,8 @@
 <template>
     <label>
         {{label}}
-        <input
-                v-bind="$attrs"
-                v-on="listeners"
-        />
+        <input v-bind="$attrs"
+               v-on="listeners"/>
     </label>
 </template>
 
@@ -17,16 +15,12 @@
                 type: String,
                 default: '',
             },
-            model: {
-                event: 'update',
-            },
         },
         computed: {
             listeners() {
-                console.log(12);
                 return {
                     ...this.$listeners,
-                    input: event => this.$emit('input', event.target.value)
+                    input: e => this.$emit('input', e.target.value)
                 }
             }
         }
@@ -36,3 +30,4 @@
 <style scoped>
 
 </style>
+
