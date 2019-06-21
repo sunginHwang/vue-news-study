@@ -3,8 +3,11 @@
         <h1>inheritAttrsTest</h1>
         <base-input :label="`fefefe`"
                     placeHolder="`placeHolderSample`"
-                    @click="test"
-                    v-model="value"/>
+                    @focus="evnetListenerDetect('focus')"
+                    @click="evnetListenerDetect('click')"
+                    @focusin="evnetListenerDetect('focusIn')"
+                    @focusout="evnetListenerDetect('focusOut')"
+                    v-model="formId"/>
         <h1>filter Test12</h1>
         <p>{{ filterTest.dateFilter | date}}</p>
         <p>{{ filterTest.currencyFilter | currency}}</p>
@@ -41,7 +44,6 @@
     import AsyncAwaitParallel from '@/components/AsyncAwaitParallel';
     import {alert, confirm} from '@/utils/dialog';
 
-
     export default {
         components: {
             AppHeader,
@@ -55,9 +57,7 @@
             return {
                 appTitle: 'common App Title',
                 items: [10, 20, 30],
-                file: "",
                 value: "",
-                inputValue:"",
                 filterTest: {
                     dateFilter: "2019-12-31 00:00:00",
                     currencyFilter: 121333,
@@ -71,7 +71,7 @@
                     return this.$store.state.form.form.id;
                 },
                 set(value) {
-                    this.$store.dispatch("form/setForm", {type: 'id', value});
+                    this.$store.dispatch("form/setForm", {type:'id',value});
                 }
             },
             formName: {
@@ -79,17 +79,13 @@
                     return this.$store.state.form.form.name;
                 },
                 set(value) {
-                    this.$store.dispatch("form/setForm", {type: 'name', value});
+                    this.$store.dispatch("form/setForm", {type:'name',value});
                 }
             },
         },
         methods: {
-            testFile(e) {
-                this.file = e.target.files[0]
-                console.log(this.file);
-            },
-            focus() {
-                console.log('focus');
+            evnetListenerDetect(type) {
+                console.log(`event : ${type} detect`);
             },
             renewItems() {
                 this.items = [40, 50, 60]
@@ -108,7 +104,5 @@
 </script>
 
 <style>
-    .base-test {
-        margin: 3rem;
-    }
+
 </style>
